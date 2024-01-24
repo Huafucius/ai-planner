@@ -1,0 +1,32 @@
+# Command: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# excel
+openpyxl
+
+# Data Analysis
+numpy
+pandas
+scipy
+
+# Data Visualization
+Matplotlib
+Seaborn
+
+# Full Stack Development
+requests
+Django
+Flask
+
+# Database
+cryptography
+pymysql
+mysqlclient
+
+# jupyter
+notebook
+jupyter_ai_magics
+
+# chatGPT
+openai
+
+pip install Django cryptography mysqlclient pymysql -i https://pypi.tuna.tsinghua.edu.cn/simple
