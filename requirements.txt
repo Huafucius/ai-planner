@@ -28,5 +28,3 @@ jupyter_ai_magics
 
 # chatGPT
 openai
-
-pip install Django cryptography mysqlclient pymysql -i https://pypi.tuna.tsinghua.edu.cn/simple
