@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
 def login(request):
-    return render(request,"login.html")
+    if request.method == "GET":
+        return render(request, "login.html")
+
+    user_name = request.POST.get("user_name", "")
+    user_pwd = request.POST.get("user_pwd", "")
+    
+    
 
 def home(request):
     return render(request,"home.html")
