@@ -21,8 +21,8 @@ from mainapp import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
+    path('',views.home),
     path('login/',views.login),
-    path('home/',views.home),
     path('vision/manage/',views.vision_manage),
     path('vision/create/',views.vision_create),
     path('okr/',views.okr),

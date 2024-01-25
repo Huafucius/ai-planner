@@ -1,117 +1,43 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>AIplanner</title>
+{% block page_title %}AIplanner{% endblock page_title %}
 
-    <link rel="stylesheet" href='{% static "plugins\bootstrap-5.3.0-alpha1\css\bootstrap.css" %}'>
-    <script src='{% static "plugins\bootstrap-5.3.0-alpha1\js\bootstrap.bundle.min.js" %}'></script>
-    <script src='{% static "plugins\jquery-3.7.1.js" %}'></script>
-    <style>
-        body {
-            margin: 0;
-        }
+{% block css %}
 
-        .zth-nav-bar {
-            position: fixed;
-            left: 0px;
-            right: 0px;
-            top: 0px;
-            z-index: 100;
-        }
+.zth-main .zth-left-block {
+padding: 0;
+}
 
-        .zth-main {
-            margin: 0;
-            margin-top: 56px;
-            /* 56px是上面导航栏的高度 */
-            width: 100%;
-            height: 100vh;
-        }
+.zth-main .zth-left-block .zth-title {
+text-align: center;
+}
 
-        .zth-main .zth-left-block {
-            padding:0;
-        }
+{% endblock css %}
 
-        .zth-main .zth-left-block .zth-title{
-            text-align: center;
-        }
-    </style>
+{% block content %}
 
-</head>
-
-<body class="clearfix">
-    <!-- 导航栏 -->     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary zth-nav-bar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">主页 version1.0</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            愿景
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/vision/manage">愿景管理</a></li>
-                            <li><a class="dropdown-item" href="/vision/create">愿景创建</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            计划
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/okr">OKR管理</a></li>
-                            <li><a class="dropdown-item" href="/milestone">Milestone管理</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/schedule">日程表</a>
-                    </li>
-                    <nav class="navbar bg-body-tertiary">
-
-                    </nav>
-                </ul>
-                <ul class="navbar-nav navbar-right mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">登录</a>
-                    </li>
-                    <nav class="navbar bg-body-tertiary">
-                    </nav>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- 主要页面 -->
-    <div class="row zth-main">
-        <!-- 左侧功能栏 -->
-        <div class="col-md-2 bg-white zth-left-block">
-              <h2 class="zth-title">功能连接</h2>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action ">这边是一些功能</a>
-                <a href="https://chat.openai.com/" class="list-group-item list-group-item-action" target="_blank">比如chatGPT链接</a>
-                <a href="#" class="list-group-item list-group-item-action">比如一些用户可以添加的快捷网址之类的吧</a>
-              </div>
-        </div>
-        <!-- 中间待办栏 -->
-        <div class="col-md-7 bg-primary-subtle">
-            <p>可以展示用户的所有的待办之类的，方便他们快速查找</p>
-            <p>锦上添花，但是先留着位置</p>
-        </div>
-        <!-- 右侧信息栏 -->
-        <div class="col-md-3 bg-warning-subtle">
-            <p>展示用户个人信息的地方</p>
-            <p>比如用户名之类的账号信息</p>
+<!-- 主要页面 -->
+<div class="row zth-main">
+    <!-- 左侧功能栏 -->
+    <div class="col-md-2 bg-white zth-left-block">
+        <h2 class="zth-title">功能连接</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action ">这边是一些功能</a>
+            <a href="https://chat.openai.com/" class="list-group-item list-group-item-action"
+                target="_blank">比如chatGPT链接</a>
+            <a href="#" class="list-group-item list-group-item-action">比如一些用户可以添加的快捷网址之类的吧</a>
         </div>
     </div>
-</body>
+    <!-- 中间待办栏 -->
+    <div class="col-md-7 bg-primary-subtle">
+        <p>可以展示用户的所有的待办之类的，方便他们快速查找</p>
+        <p>锦上添花，但是先留着位置</p>
+    </div>
+    <!-- 右侧信息栏 -->
+    <div class="col-md-3 bg-warning-subtle">
+        <p>展示用户个人信息的地方</p>
+        <p>比如用户名之类的账号信息</p>
+    </div>
+</div>
 
-</html>
+{% endblock content %}
