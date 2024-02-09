@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load static %}
 
 {% block page_title %}AIplanner{% endblock page_title %}
 
@@ -8,7 +9,7 @@
 padding: 0;
 }
 
-.zth-main .zth-left-block .zth-title {
+.zth-main .zth-title {
 text-align: center;
 }
 
@@ -30,8 +31,11 @@ text-align: center;
     </div>
     <!-- 中间待办栏 -->
     <div class="col-md-7 bg-primary-subtle">
-        <p>可以展示用户的所有的待办之类的，方便他们快速查找</p>
-        <p>锦上添花，但是先留着位置</p>
+        <h2 class="zth-title">待办清单</h2>
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action">清单捏，提供跳转</button>
+            <button type="button" class="list-group-item list-group-item-action">跳转到哪再说</button>
+          </div>
     </div>
     <!-- 右侧信息栏 -->
     <div class="col-md-3 bg-warning-subtle">
