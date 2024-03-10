@@ -28,5 +28,3 @@ jupyter_ai_magics
 
 # chatGPT
 openai
-
-12312312312312
