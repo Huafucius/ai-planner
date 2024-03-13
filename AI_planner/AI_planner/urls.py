@@ -28,4 +28,5 @@ urlpatterns = [
     path('okr/',views.okr),
     path('milestone/',views.milestone),
     path('schedule/',views.schedule),
+    path('mytemplates/',views.my_templates),
 ]
