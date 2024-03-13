@@ -10,8 +10,13 @@ def login(request):
     
 
 def home(request):
-    return render(request,"home.html")
+    if request.method == "GET":
+        return render(request,"home.html")
 
+    user_input= request.POST.get("user_input", "")
+    user_response = 1
+    return render(request, "home.html",user_response=user_response)
+    
 def vision_manage(request):
     return render(request,"vision_manage.html")
 
@@ -26,3 +31,4 @@ def milestone(request):
 
 def schedule(request):
     return render(request,"schedule.html")
+
