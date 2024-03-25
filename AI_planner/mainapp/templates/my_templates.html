@@ -1,4 +1,3 @@
-
 <style>
     body {
        display: flex;
@@ -49,7 +48,7 @@
 
         /* 中间任务栏 */
 
-    .container {
+        .container {
         max-width: 760px; /* Adjust this width to suit your layout needs */
         width: 100%;
         margin-right: 0; 
@@ -57,12 +56,12 @@
    }
     .zth-main { 
         position: absolute; /* 绝对定位，相对于第一个非static定位的祖先元素 */
-        left: 100px; /* 导航栏宽度加上预留的空间 */
+        left: 220px; /* 导航栏宽度加上预留的空间 */
         top: 0;
         bottom: 0;
         right: 0; /* 设置右侧为0，使其自动计算所需宽度 */
         padding: 20px;
-        width: calc(100% - 220px); /* 总宽度减去导航栏和间隙的宽度 */
+        width: calc(100% - 350px); /* 总宽度减去导航栏和间隙的宽度 */
         overflow-y: auto; /* 内容超出时允许滚动 */
         background-color: #f8f9fa; /* 设置背景颜色以区分导航栏 */
     }
@@ -97,17 +96,21 @@
     margin-top: 20px; /* 添加20像素的上边距 */
     }
 
-
-    .btn-primary:hover {
-        background-color: #0056b3;
+    .button-container {
+    display: flex;
+    justify-content: space-between; /* 使一个按钮靠左，一个靠右 */
+    margin-top: 20px; /* 或者需要的任何值，以便于底部有一些间隔 */
     }
 
-    </style>
+    .btn-left {
+    align-self: flex-start; /* 靠左对齐 */
+    }
 
+    .btn-right {
+    align-self: flex-end; /* 靠右对齐 */
+    }
+</style>
 
-
-<!-- 主要页面 -->
-<div class="row zth-main">
     <!-- 左侧功能栏 -->
     <div class="col-md-2 bg-white zth-left-block">
         <h2 class="zth-title">功能连接</h2>
@@ -129,65 +132,24 @@
             </ul>
         </div>
     </div>
-    <!-- 中间待办栏 -->
-    <div class="col-md-7 bg-primary-subtle">
-        <h2 class="zth-title">待办清单</h2>
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action">清单捏，提供跳转</button>
-            <button type="button" class="list-group-item list-group-item-action">跳转到哪再说</button>
-          </div>
-    </div>
-    <!-- 右侧信息栏 -->
-    <div class="col-md-3 bg-warning-subtle">
-        <p>展示用户个人信息的地方</p>
-        <p>比如用户名之类的账号信息</p>
-        <p>...</p>
-    </div>
-</div>
-    <!-- 中间任务栏 -->
-    <div class="zth-main">
-        <div class="container">
-        <h2 class="zth-title">任务栏</h2>
-        <!-- 其他中间内容 -->
-        <form method="get" action='/my_templates'>
-            {% csrf_token %}
-            <div class="row mb-3">
-                <div class="form-floating">
-                    <textarea name="user_input" class="form-control form-control-lg" placeholder="输入愿景" id="floatingTextarea2" style="height: 60px" ></textarea>
-                    <label for="floatingTextarea2"></label>
-            </div>
 
-            <div class="form-floating">
-                <textarea class="form-control form-control-lg" placeholder="写入具体方向" id="floatingTextarea2" style="height: 60px"></textarea>
-                <label for="floatingTextarea2"></label>
-            </div>
+        <!-- AI输出-->
+        <div class="zth-main">
+            <div class="container">
+            <h2 class="zth-title">愿景输出</h2>
+            <p>{{user_response}}<p>
+            <form>
+                <div class="row mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control form-control-lg"  id="floatingTextarea2" style="height: 300px" ></textarea>
+                </div>
 
-            <fieldset class="row mb-3">
-              <legend class="col-form-label col-sm-2 pt-0">选择</legend>
-              <div class="col-sm-10">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  <label class="form-check-label" for="gridRadios1">
-                    First radio
-                  </label>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-primary btn-left">返回修改</button>
+                    <button type="submit" class="btn btn-primary btn-right">添加</button>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  <label class="form-check-label" for="gridRadios2">
-                    Second radio
-                  </label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                  <label class="form-check-label" for="gridRadios3">
-                    Third disabled radio
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-
-            <button type="submit" class="btn btn-primary mt-20">初步生成</button>
-          </form>
+                
+            </form>
         </div>
-
-    </div>
+    
+        </div>
