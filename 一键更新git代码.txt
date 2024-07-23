@@ -1,6 +1,0 @@
-cd /data/AIplanner
-git pull
-
-Huafucius
-
-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
